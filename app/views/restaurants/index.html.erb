@@ -1,0 +1,11 @@
+<h1 style=  "margin: 20px;">Restaurants</h1>
+
+<% @restaurants.each do |restaurant| %>
+<h3 style=  "margin: 20px;"><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+
+<p style=  "margin: 20px;" > <%= link_to "Delete", restaurant_path(restaurant),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %> </p>
+<% end %>
+
+<p style=  "margin: 20px;" > <%= link_to "add new restaurant", new_restaurant_path %></p>

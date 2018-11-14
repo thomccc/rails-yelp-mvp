@@ -1,0 +1,16 @@
+
+<h4 style = "text-align: center; margin-top: 30px;"> Category ---  <%= @restaurant.category %>  </h4>
+<h4 style = "text-align: center; margin-top: 30px;"> Address --- <%= @restaurant.address %> </h4>
+<h4 style = "text-align: center; margin-top: 30px;"> Phone number --- <%= @restaurant.phone_number %> </h4>
+<h4 style = "text-align: center; margin-top: 50px;"> Reviews</h4>
+
+<% @reviews.each do |review| %>
+<h5 style = "text-align: center; margin-top: 30px;">comment:"<%= review.content %>"  rating: <%= review.rating %></h5>
+
+<% end %>
+
+
+<p style = "margin-left: 20px;"><%= link_to "Edit task", edit_restaurant_path %></p>
+<p style = "margin-left: 20px;"><%= link_to "Add review", new_restaurant_review_path(@restaurant) %></p>
+
+<p style = "margin-left: 20px;"><%= link_to "Home" , restaurants_path %></p>
